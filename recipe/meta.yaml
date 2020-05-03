@@ -1,5 +1,5 @@
 {% set name = "mimalloc" %}
-{% set version = "1.6.1" %}
+{% set version = "1.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,13 @@ package:
 
 source:
   url: https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz
-  sha256: 7fe9b8f30cd25f8ea35dbb6539652bbf9ea44cb01865bac70a1c368f6b96c770
+  sha256: a4bf4e1e0764230e8abbcec88e2ffaf170804fdfcda15e6a17f63f7088d8e692
   patches:
-    - 0001-patch-aligned_malloc.patch
-    - 0002-fix-install-path.patch
+    - 0001-update-install-path-patch.patch
 
 build:
   number: 0
-  skip: True  # [not linux]
+  skip: true  # [not linux]
 
 requirements:
   build:
@@ -45,7 +44,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'mimalloc is a compact general purpose allocator with excellent performance.'
+  summary: mimalloc is a compact general purpose allocator with excellent performance.
 
   description: |
     mimalloc (pronounced "me-malloc") is a general purpose allocator with
