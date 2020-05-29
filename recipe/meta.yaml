@@ -20,6 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
+    - ninja
 
 # .
 # ├── include
@@ -34,9 +35,7 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libmimalloc.so
-    - test -f $PREFIX/lib/libmimalloc.a
-    - test -f $PREFIX/lib/mimalloc.o
+    - test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}
     - test -f $PREFIX/include/mimalloc.h
 
 about:
