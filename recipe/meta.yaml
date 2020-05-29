@@ -12,8 +12,8 @@ source:
     - 0001-update-install-path-patch.patch
 
 build:
-  number: 0
-  skip: true  # [not linux]
+  number: 1
+  skip: true  # [win]
 
 requirements:
   build:
