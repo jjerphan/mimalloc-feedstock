@@ -1,5 +1,5 @@
 {% set name = "mimalloc" %}
-{% set version = "1.6.3" %}
+{% set version = "2.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,10 @@ package:
 
 source:
   url: https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz
-  sha256: 85034d1705b1897b1005d3a4746b1ed66ae5840a31b1cb3e463c6ca6c8422a5e
-  patches:
-    - 0001-Add-option-to-install-directly-in-CMAKE_INSTALL_PREF.patch
+  sha256: c81a5f443f72373e3105172d6a935e29b0dabd13ba387c080bc444586cbe3021
 
 build:
-  number: 3
+  number: 0
   run_exports:
     - {{ pin_subpackage("mimalloc", max_pin="x.x.x") }}
 
@@ -38,7 +36,7 @@ test:
   commands:
     - test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/mimalloc.h           # [unix]
-    - if not exist %LIBRARY_PREFIX%\\bin\\mimalloc.dll exit 1    # [win]
+    - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.dll exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.lib exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\include\\mimalloc.h exit 1  # [win]
 
