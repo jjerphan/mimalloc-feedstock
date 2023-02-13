@@ -10,7 +10,8 @@ source:
   sha256: 4a29edae32a914a706715e2ac8e7e4109e25353212edeed0888f4e3e15db5850
 
 build:
-  number: 0
+  number: 1
+  merge_build_host: true
   run_exports:
     - {{ pin_subpackage("mimalloc", max_pin="x.x.x") }}
 
@@ -20,6 +21,8 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - ninja
+  run:
+    - sysroot_linux-64  # [linux]
 
 # .
 # ├── include
