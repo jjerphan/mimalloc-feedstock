@@ -13,4 +13,5 @@ cmake \
   -DMI_BUILD_STATIC=OFF \
   -DMI_BUILD_OBJECT=OFF \
   ../..
+
 ninja install

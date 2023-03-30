@@ -10,8 +10,7 @@ source:
   sha256: 4a29edae32a914a706715e2ac8e7e4109e25353212edeed0888f4e3e15db5850
 
 build:
-  number: 2
-  merge_build_host: true
+  number: 3
   run_exports:
     - {{ pin_subpackage("mimalloc", max_pin="x.x.x") }}
 
@@ -21,8 +20,6 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - ninja
-  run:
-    - sysroot_linux-64  # [linux]
 
 # .
 # ├── include
@@ -43,6 +40,7 @@ test:
   commands:
     - test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/mimalloc.h           # [unix]
+    - grep -vr feedstock_root $PREFIX/lib/cmake    # [unix]
     - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.dll exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.lib exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\include\\mimalloc.h exit 1  # [win]
