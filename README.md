@@ -1,11 +1,11 @@
-About mimalloc
-==============
+About mimalloc-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mimalloc-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/microsoft/mimalloc
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mimalloc-feedstock/blob/main/LICENSE.txt)
 
 Summary: mimalloc is a compact general purpose allocator with excellent performance.
 
