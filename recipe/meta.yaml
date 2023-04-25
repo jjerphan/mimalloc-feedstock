@@ -1,5 +1,5 @@
 {% set name = "mimalloc" %}
-{% set version = "2.1.1" %}
+{% set version = "2.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz
-  sha256: 38b9660d0d1b8a732160191609b64057d8ccc3811ab18b7607bc93ca63a6010f
+  sha256: 2b1bff6f717f9725c70bf8d79e4786da13de8a270059e4ba0bdd262ae7be46eb
 
 build:
   number: 0
