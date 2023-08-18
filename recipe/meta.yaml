@@ -10,7 +10,7 @@ source:
   sha256: 2b1bff6f717f9725c70bf8d79e4786da13de8a270059e4ba0bdd262ae7be46eb
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("mimalloc", max_pin="x.x.x") }}
 
