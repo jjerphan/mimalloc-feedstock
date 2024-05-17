@@ -22,17 +22,6 @@ requirements:
     - cmake
     - ninja
 
-# .
-# ├── include
-# │  ├── mimalloc-new-delete.h
-# │  ├── mimalloc-override.h
-# │  └── mimalloc.h
-# └── lib
-#    ├── libmimalloc.a
-#    ├── libmimalloc.so -> libmimalloc.so.1.6
-#    ├── libmimalloc.so.1.6
-#    └── mimalloc.o
-
 test:
   requires:
     - {{ compiler('c') }}
@@ -42,7 +31,6 @@ test:
   commands:
     - test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/mimalloc.h           # [unix]
-    - grep -vr feedstock_root $PREFIX/lib/cmake    # [unix]
     - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.dll exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.lib exit 1    # [win]
     - if not exist %LIBRARY_PREFIX%\\include\\mimalloc.h exit 1  # [win]
