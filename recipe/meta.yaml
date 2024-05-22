@@ -1,5 +1,5 @@
 {% set name = "mimalloc" %}
-{% set version = "2.1.6" %}
+{% set version = "2.1.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   - url: https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz
-    sha256: 0ec960b656f8623de35012edacb988f8edcc4c90d2ce6c19f1d290fbb4872ccc
+    sha256: 0eed39319f139afde8515010ff59baf24de9e47ea316a315398e8027d198202d
   - url: https://github.com/microsoft/mimalloc/raw/v{{ version }}/bin/mimalloc-redirect.lib  # [win]
-    sha256: f23cf5204b77cb899da096a0eb8e1e7c980b6639118ea36a139a20f30dc02d59                 # [win]
-    folder: bin                                                                              # [win]
+    sha256: f23cf5204b77cb899da096a0eb8e1e7c980b6639118ea36a139a20f30dc02d59  # [win]
+    folder: bin  # [win]
   - url: https://github.com/microsoft/mimalloc/raw/v{{ version }}/bin/mimalloc-redirect.dll  # [win]
-    sha256: 63dc4f158fd76940ec018b42f83d92d8ceec70043b1ac2a8455fb0d67e1feebf                 # [win]
-    folder: bin                                                                              # [win]
+    sha256: 63dc4f158fd76940ec018b42f83d92d8ceec70043b1ac2a8455fb0d67e1feebf  # [win]
+    folder: bin  # [win]
 
 build:
   number: 0
