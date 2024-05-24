@@ -35,6 +35,7 @@ test:
   files:
     - test.c
   commands:
+    - echo "Starting tests"
     - test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/mimalloc.h           # [unix]
     - if not exist %LIBRARY_PREFIX%\\lib\\mimalloc.dll exit 1    # [win]
