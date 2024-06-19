@@ -12,6 +12,7 @@ cmake ${CMAKE_ARGS}\
   -DMI_BUILD_SHARED=ON \
   -DMI_BUILD_STATIC=OFF \
   -DMI_BUILD_OBJECT=OFF \
+  -DMI_LOCAL_DYNAMIC_TLS=ON \
   ../..
 
 ninja install
