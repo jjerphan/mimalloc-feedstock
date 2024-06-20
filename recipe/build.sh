@@ -13,6 +13,7 @@ cmake ${CMAKE_ARGS}\
   -DMI_BUILD_STATIC=OFF \
   -DMI_BUILD_OBJECT=OFF \
   -DMI_LOCAL_DYNAMIC_TLS=ON \
+  -DMI_OVERRIDE=OFF \
   ../..
 
 ninja install
